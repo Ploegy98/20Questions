@@ -112,8 +112,3 @@ v1.1
 # Changes from previous version:
 # Keeping track of second best guess.
 #####################################################################
-
-v1.2
-# Changes from previous version:
-#
-#####################################################################
