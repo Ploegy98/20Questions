@@ -1,6 +1,65 @@
 ###################################################################
 # Author:
 # Adrian Negrea
+#
+#
+# 20 Questions Game
+# This program is a game which aims to guess the animal that someone
+# is thinking about using a series of 20 yes or no questions.
+#
+# A database is used to store the questions in a table, with a
+# separate table holding the values which each animal has for each
+# question.
+#
+# On program start:
+# - user given 3 options:
+#   Start a new game
+#   Add an animal
+#   Exit
+#
+# On animal addition:
+# - all the questions in the questions table are asked in order
+# - the answers are stored in a dictionary in order to preserve
+#   correct order
+# - a new row is added to the animals table with the name of the
+#   animal and the answers that have just been supplied
+#
+# On game start:
+# - a dictionary is initialized which holds the value of each
+#   animal, which is incremented by 1 each time the answer given
+#   by the player matches up with the value of that animal for that
+#   question
+#   animals_values = {'ANIMAL NAME': VALUE}
+# - a variable is initialized in order to hold the highest value
+#   (currently 0)
+#   max_value = 0
+# - a variable is initialized in order to hold the name of the
+#   animal with the highest value
+#   max_animal = ""
+# - the same is also done for the second highest value animal
+#
+# During the game:
+# - a random question is asked and then that question is kept track
+#   of so that it will not be asked again
+# - when the user supplies an answer to the random question the
+#   animals table is checked for the animals which fit the
+#   description and their values in the animals_values is increased
+#   by 1
+# - if the value of an animal exceeds that of max_value after it is
+#   incremented, the value of this animal will become the new
+#   value for max_value and max_animal will hold its name and likewise
+#   for the second highest valued animal
+# - the best and second best guesses are used to determine which
+#   questions will be asked next
+#
+# End of game:
+# - the game supplies max_animal as a guess to the player
+# - the player answers if the guess was in fact the animal they
+#   were thinking of
+# - if the guess is not correct then the player is asked for
+#   what they were actually thinking of and then that is
+#   added to the database as a new animal
+# - user returned to the main_menu
 ###################################################################
 
 import sqlite3, random, os
