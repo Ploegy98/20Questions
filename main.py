@@ -239,15 +239,11 @@ def new_game():
                         second_animal = row[1]
 
                 animals_values.update({row[1]:val})
-        print("best " + max_animal)
-        print("second " + second_animal)
 
-        # Remove question asked from questions_left so that it.
-        # Does not get asked again.
-        print("removed question " + str(question_number))
+        # Remove question asked from questions_left so that it
+        # does not get asked again.
         q_index = questions_left.index(question_number)
         questions_left.remove(questions_left[q_index])
-        print("questions_left: " + str(questions_left))
 
     # Provide best guess.
     guess = max_animal
